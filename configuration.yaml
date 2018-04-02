@@ -2,12 +2,9 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: 54 Palm Ave
   # Location required to calculate the time the sun rises and sets
-  #latitude: -27.5649
-  latitude: -26.5332482
-  #longitude: 153.0665
-  longitude: 153.0782523
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 17
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -28,10 +25,10 @@ http:
   # Secrets are defined in the file secrets.yaml
   api_password: !secret http_password
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  base_url: HAAS.coolum.ontokairos.stream:8123
+  base_url: !secret http_base_url
   # SSL
-  ssl_certificate: /etc/ssl/certs/ontokairos.stream.crt
-  ssl_key: /etc/ssl/certs/ontokairos.stream.key
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
   cors_allowed_origins:
     - https://google.com
     - https://www.home-assistant.io
@@ -127,7 +124,7 @@ mqtt:
   will_message:
     topic: 'hass/status'
     payload: 'offline'
-    
+
 # Cloud
 cloud:
 
