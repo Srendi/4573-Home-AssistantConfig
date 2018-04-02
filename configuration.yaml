@@ -1,0 +1,198 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: 54 Palm Ave
+  # Location required to calculate the time the sun rises and sets
+  #latitude: -27.5649
+  latitude: -26.5332482
+  #longitude: 153.0665
+  longitude: 153.0782523
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 17
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Australia/Brisbane
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: HAAS.coolum.ontokairos.stream:8123
+  # SSL
+  ssl_certificate: /etc/ssl/certs/ontokairos.stream.crt
+  ssl_key: /etc/ssl/certs/ontokairos.stream.key
+  cors_allowed_origins:
+    - https://google.com
+    - https://www.home-assistant.io
+  use_x_forwarded_for: True
+  # Passwordless access
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+#   - 192.168.1.0/24
+#   - 192.168.0.0/24
+  # Prevent too many failed login attempes
+  ip_ban_enabled: true
+  login_attempts_threshold: 10
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: yr
+#sensor:
+  - platform: bom
+    # TewantinNoosa
+    # IDQ60901.94570
+    # Toowoomba
+    # IDQ60901.95551
+    # Sunshine Coast Airport
+    station: IDQ60901.94569
+    name: Sunshine Coast Airport
+    monitored_conditions:
+      - apparent_t
+      - cloud
+      - cloud_base_m
+      - cloud_oktas
+      - cloud_type_id
+      - cloud_type
+      - delta_t
+      - gust_kmh
+      - gust_kt
+      - air_temp
+      - dewpt
+      - press
+      - press_qnh
+      - press_msl
+      - press_tend
+      - rain_trace
+      - rel_hum
+      - sea_state
+      - swell_dir_worded
+      - swell_height
+      - swell_period
+      - vis_km
+      - weather
+      - wind_dir
+      - wind_spd_kmh
+      - wind_spd_kt
+
+# Text to speech
+tts:
+  - platform: google
+
+# Embedded MQTT Broker
+mqtt:
+  discovery: true
+  discovery_prefix: homeassistant
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+    
+# Cloud
+cloud:
+
+# Tracker
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 60
+    waypoints: True
+    mqtt_topic: "owntracks/#"
+    events_only: True
+#    waypoint_whitelist:
+#      - jon
+#      - ram
+#    region_mapping:
+#      cabin: home
+#      office: work
+
+# Google Assistant Speach Thing
+# https://www.home-assistant.io/components/dialogflow/
+# https://github.com/home-assistant/home-assistant.github.io/blob/next/source/assets/HomeAssistant_APIAI.zip (Imported into Dialogueflow website)
+dialogflow:
+
+intent_script:
+  Temperature:
+    speech:
+      text: The temperature at home is {{ states('sensor.home_temp') }} degrees
+  LocateIntent:
+    speech:
+      text: >
+        {%- for state in states.device_tracker -%}
+          {%- if state.name.lower() == User.lower() -%}
+            {{ state.name }} is at {{ state.state }}
+          {%- elif loop.last -%}
+            I am sorry, I do not know where {{ User }} is.
+          {%- endif -%}
+        {%- else -%}
+          Sorry, I don't have any trackers registered.
+        {%- endfor -%}
+  WhereAreWeIntent:
+    speech:
+      text: >
+        {%- if is_state('device_tracker.adri', 'home') and
+               is_state('device_tracker.bea', 'home') -%}
+          You are both home, you silly
+        {%- else -%}
+          Bea is at {{ states("device_tracker.bea") }}
+          and Adri is at {{ states("device_tracker.adri") }}
+        {% endif %}
+  TurnLights:
+    speech:
+      text: Turning {{ Room }} lights {{ OnOff }}
+    action:
+      - service: notify.pushbullet
+        data_template:
+          message: Someone asked via apiai to turn {{ Room }} lights {{ OnOff }}
+      - service_template: >
+          {%- if OnOff == "on" -%}
+            switch.turn_on
+          {%- else -%}
+            switch.turn_off
+          {%- endif -%}
+        data_template:
+          entity_id: "switch.light_{{ Room | replace(' ', '_') }}"
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zone.yaml
