@@ -119,6 +119,10 @@ tts:
 
 # Embedded MQTT Broker
 mqtt:
+#  embedded:
+#    listeners:
+#      default:
+#        bind: 0.0.0.0:1883
   discovery: true
   discovery_prefix: homeassistant
   birth_message:
@@ -144,9 +148,10 @@ device_tracker:
     waypoints: True
     mqtt_topic: "owntracks/#"
     events_only: True
-#    waypoint_whitelist:
-#      - jon
-#      - ram
+    waypoint_whitelist:
+      - Device-15
+      - Device-01
+      - Gavins-Android
 #    region_mapping:
 #      cabin: home
 #      office: work
