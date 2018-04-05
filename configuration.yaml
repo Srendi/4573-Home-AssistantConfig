@@ -152,6 +152,7 @@ device_tracker:
       - Device-15
       - Device-01
       - Gavins-Android
+      - Raes-Android
 #    region_mapping:
 #      cabin: home
 #      office: work
