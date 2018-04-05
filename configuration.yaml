@@ -134,8 +134,11 @@ cloud:
 # Tracker
 device_tracker:
   - platform: nmap_tracker
+    interval_seconds: 10
+    consider_home: 180
+    track_new_devices: yes
     hosts: !secret nmap_tracked_hosts
-    
+
   - platform: owntracks
     max_gps_accuracy: 60
     waypoints: True
