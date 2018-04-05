@@ -5,8 +5,8 @@
   icon: mdi:school
 
 - name: "Lily's Home"
-  latitude: -27.341617
-  longitude: 153.007259
+  latitude: !secret lily_home_latitude
+  longitude: !secret lily_home_longitude
   radius: 80
   icon: mdi:home-heart
 
