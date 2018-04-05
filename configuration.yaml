@@ -71,7 +71,7 @@ logbook:
 
 # Logging
 logger:
-  default: warn
+  default: info
 # Enables a map showing the location of tracked devices
 map:
 
