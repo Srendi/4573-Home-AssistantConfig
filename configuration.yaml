@@ -38,7 +38,7 @@ http:
 
   # Prevent too many failed login attempes
   ip_ban_enabled: true
-  login_attempts_threshold: 2
+  login_attempts_threshold: 3
 
 # Checks for available updates
 # Note: This component will send some information about your system to
