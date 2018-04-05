@@ -43,7 +43,7 @@ http:
     #- 192.168.0.0/24
   # Prevent too many failed login attempes
   ip_ban_enabled: true
-  login_attempts_threshold: 10
+  login_attempts_threshold: 2
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -71,7 +71,7 @@ logbook:
 
 # Logging
 logger:
-  default: info
+  default: warn
 # Enables a map showing the location of tracked devices
 map:
 
