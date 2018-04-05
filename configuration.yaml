@@ -34,13 +34,8 @@ http:
     - https://www.home-assistant.io
   use_x_forwarded_for: True
   # Passwordless access
-  trusted_networks:
-    - 127.0.0.1
-    - ::1
-    #- 192.168.1.2
-    #- 192.168.1.5
-    #- 192.168.1.13
-    #- 192.168.0.0/24
+  trusted_networks: !secret home_trusted_networks
+
   # Prevent too many failed login attempes
   ip_ban_enabled: true
   login_attempts_threshold: 2
@@ -137,6 +132,10 @@ mqtt:
 cloud:
 
 # Tracker
+device_tracker:
+  - platform: nmap_tracker
+    hosts: !secret nmap_tracked_hosts
+
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 60
