@@ -52,7 +52,11 @@ updater:
 
 # avahi, bonjour, zeroconf, rendezvous
 zeroconf:
-  
+
+# Download files into dowload dir
+downloader:
+  download_dir: !secret home_assistant_download_dir
+
 # Discover some devices automatically
 discovery:
 
