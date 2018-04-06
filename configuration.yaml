@@ -83,6 +83,9 @@ sun:
 
 # Weather prediction
 sensor:
+  - platform: cert_expiry
+    host: !secret http_base_url
+
   - platform: haveibeenpwned
     email: !secret haveibeenpwned_check
 
