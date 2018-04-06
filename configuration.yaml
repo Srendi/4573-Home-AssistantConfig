@@ -85,6 +85,7 @@ sun:
 sensor:
   - platform: cert_expiry
     host: !secret http_base_url
+    port: 8123
 
   - platform: haveibeenpwned
     email: !secret haveibeenpwned_check
