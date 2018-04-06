@@ -83,6 +83,9 @@ sun:
 
 # Weather prediction
 sensor:
+  - platform: haveibeenpwned
+    email: !secret haveibeenpwned_check
+
   - platform: waqi
     token: !secret AQICN_API_TOKEN
     locations:
