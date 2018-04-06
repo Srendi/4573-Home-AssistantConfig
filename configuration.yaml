@@ -17,7 +17,7 @@ introduction:
 
 # Enables the frontend
 frontend:
-  themes:
+#  themes:
 
 # Enables configuration UI
 config:
