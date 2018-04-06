@@ -83,6 +83,13 @@ sun:
 
 # Weather prediction
 sensor:
+  - platform: waqi
+    token: !secret AQICN_API_TOKEN
+    locations:
+      - mountain-creek
+#    stations:
+#      - Beijing US Embassy
+
   - platform: yr
 #sensor:
   - platform: bom
