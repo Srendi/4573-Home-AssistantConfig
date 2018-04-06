@@ -83,6 +83,8 @@ sun:
 
 # Weather prediction
 sensor:
+  - platform: moon
+  
   - platform: cert_expiry
     host: !secret http_base_url
     port: 8123
