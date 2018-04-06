@@ -86,7 +86,7 @@ sensor:
   - platform: waqi
     token: !secret AQICN_API_TOKEN
     locations:
-      - mountain-creek
+      - mountain creek
 #    stations:
 #      - Beijing US Embassy
 
