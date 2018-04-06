@@ -17,6 +17,7 @@ introduction:
 
 # Enables the frontend
 frontend:
+  themes:
 
 # Enables configuration UI
 config:
@@ -49,12 +50,15 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
 
+# avahi, bonjour, zeroconf, rendezvous
+zeroconf:
+  
 # Discover some devices automatically
 discovery:
 
 ifttt:
   key: !secret ifttt_key
-  
+
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
