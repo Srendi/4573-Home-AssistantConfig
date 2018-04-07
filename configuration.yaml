@@ -22,6 +22,9 @@ frontend:
 # Enables configuration UI
 config:
 
+media_player:
+  - platform: cast
+  
 http:
   # Secrets are defined in the file secrets.yaml
   api_password: !secret http_password
