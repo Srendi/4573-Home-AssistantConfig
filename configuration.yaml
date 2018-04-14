@@ -170,6 +170,10 @@ device_tracker:
     track_new_devices: yes
     hosts: !secret nmap_tracked_hosts
 
+  - platform: google_maps
+    username: !secret mygoogleuser
+    password: !secret mygooglepassword
+
   - platform: owntracks
     max_gps_accuracy: 60
     waypoints: True
