@@ -165,8 +165,8 @@ cloud:
 # Tracker
 device_tracker:
   - platform: nmap_tracker
-    interval_seconds: 10
-    consider_home: 180
+    interval_seconds: 90
+    consider_home: 240
     track_new_devices: yes
     hosts: !secret nmap_tracked_hosts
 
