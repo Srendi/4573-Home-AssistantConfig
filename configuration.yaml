@@ -173,6 +173,10 @@ device_tracker:
   - platform: google_maps
     username: !secret mygoogleuser
     password: !secret mygooglepassword
+    
+  - platform: google_maps
+    username: !secret mygoogleuser2
+    password: !secret mygooglepassword2
 
   - platform: owntracks
     max_gps_accuracy: 60
