@@ -24,6 +24,10 @@ config:
 
 media_player:
   - platform: cast
+
+  - platform: kodi
+  # BedKodi
+    host: !secret bedkodihost
   
 http:
   # Secrets are defined in the file secrets.yaml
@@ -165,7 +169,7 @@ cloud:
 # Apple HomeKit and Siri Control
 homekit:
   auto_start: False
-      
+
 # Tracker
 device_tracker:
   # - platform: mikrotik
