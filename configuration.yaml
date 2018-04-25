@@ -31,6 +31,12 @@ media_player:
     host: !secret bedkodi_HOST
     username: !secret bedkodi_USER
     password: !secret bedkodi_PASS
+    turn_on_action:
+      - service: wake_on_lan.send_magic_packet
+        data:
+          # WiFi?
+          mac: !secret bedkodi_MAC
+          broadcast_address: !secret LAN_BROADCAST
 
   - platform: kodi
   # LoungeKodi
@@ -38,6 +44,12 @@ media_player:
     host: !secret loungekodi_HOST
     username: !secret loungekodi_USER
     password: !secret loungekodi_PASS
+    turn_on_action:
+      - service: wake_on_lan.send_magic_packet
+        data:
+          # WiFi?
+          mac: !secret loungekodi_MAC
+          broadcast_address: !secret LAN_BROADCAST
 
 http:
   # Secrets are defined in the file secrets.yaml
@@ -60,7 +72,7 @@ http:
 
 # Add Wake on LAN Powers to HASS
 wake_on_lan:
-  
+
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
