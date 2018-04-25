@@ -162,13 +162,17 @@ mqtt:
 # Cloud
 cloud:
 
+# Apple HomeKit and Siri Control
+homekit:
+  auto_start: False
+      
 # Tracker
 device_tracker:
   # - platform: mikrotik
   #   host: !secret mikrotik_IP
   #   username: !secret mikrotik_USER
   #   password: !secret mikrotik_PASS
-  
+
   - platform: huawei_router
     host: !secret huawei_IP
     username: !secret huawei_USER
