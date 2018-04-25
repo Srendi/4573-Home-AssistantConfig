@@ -58,6 +58,9 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
 
+# Add Wake on LAN Powers to HASS
+wake_on_lan:
+  
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
