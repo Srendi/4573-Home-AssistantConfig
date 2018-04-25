@@ -164,10 +164,10 @@ cloud:
 
 # Tracker
 device_tracker:
-  - platform: mikrotik
-    host: !secret mikrotik_IP
-    username: !secret mikrotik_USER
-    password: !secret mikrotik_PASS
+  # - platform: mikrotik
+  #   host: !secret mikrotik_IP
+  #   username: !secret mikrotik_USER
+  #   password: !secret mikrotik_PASS
     
   - platform: nmap_tracker
     interval_seconds: 90
