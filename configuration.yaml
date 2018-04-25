@@ -27,8 +27,17 @@ media_player:
 
   - platform: kodi
   # BedKodi
-    host: !secret bedkodihost
+    host: !secret bedkodi_HOST
+    username: !secret bedkodi_USER
+    password: !secret bedkodi_PASS
+
+  # - platform: kodi
+  # # LoungeKodi
+  #   host: !secret loungekodi_HOST
   
+  #   username: !secret loungekodi_USER
+  #   password: !secret loungekodi_PASS
+
 http:
   # Secrets are defined in the file secrets.yaml
   api_password: !secret http_password
