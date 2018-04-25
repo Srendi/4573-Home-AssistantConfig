@@ -1,0 +1,14 @@
+
+update_library:
+  alias: Update Kodi Libraries
+  sequence:
+    - alias: Call BedKodi update
+      service: media_player.kodi_call_method
+      data:
+        entity_id: media_player.BedKodi
+        method: VideoLibrary.Scan
+    - alias: Call LoungeKodi update
+      service: media_player.kodi_call_method
+      data:
+        entity_id: media_player.LoungeKodi
+        method: VideoLibrary.Scan
