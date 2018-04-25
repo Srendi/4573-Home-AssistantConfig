@@ -37,6 +37,11 @@ media_player:
           # WiFi?
           mac: !secret bedkodi_MAC
           broadcast_address: !secret LAN_BROADCAST
+    turn_off_action:
+      service: media_player.kodi_call_method
+      data:
+        entity_id: media_player.BedKodi
+        method: System.Shutdown
 
   - platform: kodi
   # LoungeKodi
@@ -50,6 +55,11 @@ media_player:
           # WiFi?
           mac: !secret loungekodi_MAC
           broadcast_address: !secret LAN_BROADCAST
+    turn_off_action:
+      service: media_player.kodi_call_method
+      data:
+        entity_id: media_player.LoungeKodi
+        method: System.Shutdown
 
 http:
   # Secrets are defined in the file secrets.yaml
