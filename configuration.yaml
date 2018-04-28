@@ -7,6 +7,8 @@ homeassistant:
   elevation: !secret homeassistant_elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
+  # C for Celcius, F for Fahrenheit
+  temperature_unit: C
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret homeassistant_time_zone
   # Customization file
@@ -111,6 +113,9 @@ ifttt:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
+
+# ffmpeg
+ffmpeg:
 
 # Enables support for tracking state changes over time
 history:
@@ -271,7 +276,7 @@ device_tracker:
 #    password: !secret mygooglepassword2
 
   - platform: owntracks
-    max_gps_accuracy: 60
+    max_gps_accuracy: 200
     waypoints: True
     mqtt_topic: "owntracks/#"
     events_only: True
@@ -283,7 +288,7 @@ device_tracker:
 #    region_mapping:
 #      cabin: home
 #      office: work
-
+alexa:
 # Google Assistant Speach Thing
 # https://www.home-assistant.io/components/dialogflow/
 # https://github.com/home-assistant/home-assistant.github.io/blob/next/source/assets/HomeAssistant_APIAI.zip (Imported into Dialogueflow website)
