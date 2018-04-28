@@ -9,7 +9,7 @@
 - id: automation02
   alias: Update Kodi
   trigger:
-  - at: 01:19:00
+  - at: 00:01:00
     platform: time
   action:
   - service: script.update_library

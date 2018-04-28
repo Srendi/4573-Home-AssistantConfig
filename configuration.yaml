@@ -279,9 +279,10 @@ device_tracker:
   #   password: !secret huawei_PASS
    
   - platform: nmap_tracker
-    interval_seconds: 90
+    interval_seconds: 60
     consider_home: 240
     track_new_devices: yes
+    exclude: !secret local_IP
     hosts: !secret nmap_tracked_hosts
 
   - platform: google_maps
