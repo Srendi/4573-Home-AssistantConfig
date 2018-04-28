@@ -285,13 +285,13 @@ device_tracker:
     exclude: !secret local_IP
     hosts: !secret nmap_tracked_hosts
 
-  - platform: google_maps
-    username: !secret mygoogleuser
-    password: !secret mygooglepassword
+  # - platform: google_maps
+  #   username: !secret mygoogleuser
+  #   password: !secret mygooglepassword
 
-#  - platform: google_maps
-#    username: !secret mygoogleuser2
-#    password: !secret mygooglepassword2
+ - platform: google_maps
+   username: !secret mygoogleuser2
+   password: !secret mygooglepassword2
 
   - platform: owntracks
     max_gps_accuracy: 200
