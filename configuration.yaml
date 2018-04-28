@@ -93,7 +93,8 @@ wake_on_lan:
 google:
   client_id: !secret google_calender_CLIENT_ID
   client_secret: !secret google_calender_CLIENT_SECRET
-  
+  track_new_calendar: True
+
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
