@@ -10,11 +10,11 @@
   radius: 100
   icon: mdi:home-heart
 
-- name: "Mum's Home"
-  latitude: !secret mum_home_latitude
-  longitude: !secret mum_home_longitude
-  radius: 100
-  icon: mdi:account-multiple
+# - name: "Mum's Home"
+#   latitude: !secret mum_home_latitude
+#   longitude: !secret mum_home_longitude
+#   radius: 100
+#   icon: mdi:account-multiple
 
 - name: "Woolies Coolum"
   latitude: -26.5385707
