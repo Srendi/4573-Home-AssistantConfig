@@ -14,8 +14,8 @@ appdaemon:
   plugins:
     HASS:
       type: hass
-      ha_url: !secret http_base_ur
+      ha_url: !secret http_base_url
       ha_key: !secret home_assistant_key
       cert_path: !secret ssl_certificate
-      cert_verify: True
+      cert_verify: False
       namespace: default
