@@ -200,6 +200,41 @@ mqtt:
 
 # Cloud
 cloud:
+#  google_actions:
+#    filter:
+#      include_entities:
+#        - light.kitchen
+#        - light.kitchen_left
+#      include_domains:
+#        - switch
+#      exclude_entities:
+#        - switch.outside
+#    entity_config:
+#      switch.kitchen:
+#        name: Custom Name for Google Assistant
+#        aliases:
+#         - bright lights
+#         - entry lights
+google_assistant:
+  project_id: !secret google_assistant_PROJECT_ID
+  client_id: !secret google_assistant_CLIENT_ID
+  access_token: !secret google_assistant_ACCESS_TOKEN
+  agent_user_id: !secret google_assistant_AGENT_USER_ID
+  api_key: !secret google_assistant_API_KEY
+  expose_by_default: true
+  # exposed_domains:
+  #   - switch
+  #   - light
+  #   - group
+  # entity_config:
+  #   switch.kitchen:
+  #     name: Custom Name for Google Assistant
+  #     aliases:
+  #       - bright lights
+  #       - entry lights
+  #   light.living_room:
+  #     expose: false
+  #     room: living room
 
 # Apple HomeKit and Siri Control
 homekit:
