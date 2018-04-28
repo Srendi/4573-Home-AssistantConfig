@@ -330,6 +330,11 @@ intent_script:
           {%- endif -%}
         data_template:
           entity_id: "switch.light_{{ Room | replace(' ', '_') }}"
+notify:
+  - name: HASS_Chrome_Notifier
+    platform: html5
+    gcm_api_key: !secret gcm_server_key
+    gcm_sender_id: !secret gcm_sender_id
 
 group: !include groups.yaml
 automation: !include automations.yaml
