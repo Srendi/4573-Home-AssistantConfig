@@ -1,35 +1,41 @@
 - name: "Lily's School"
   latitude: !secret lily_school_latitude
   longitude: !secret lily_school_longitude
-  radius: 150
+  radius: 200
   icon: mdi:school
 
 - name: "Lily's Home"
   latitude: !secret lily_home_latitude
   longitude: !secret lily_home_longitude
-  radius: 80
+  radius: 100
   icon: mdi:home-heart
 
 - name: "Mum's Home"
   latitude: !secret mum_home_latitude
   longitude: !secret mum_home_longitude
-  radius: 60
+  radius: 100
   icon: mdi:account-multiple
 
 - name: "Woolies Coolum"
   latitude: -26.5385707
   longitude: 153.0788934
-  radius: 60
+  radius: 100
   icon: mdi:store
 
 - name: "Coles Coolum"
   latitude: -26.5262866
   longitude: 153.0883046
-  radius: 60
+  radius: 100
   icon: mdi:store
+
+- name: "Coolum Beach SLSC"
+  latitude: -26.5312964
+  longitude: 153.0902601
+  radius: 100
+  icon: mdi:briefcase
 
 - name: "Sunshine Coast Airport"
   latitude: -26.6054267
   longitude: 153.0885187
-  radius: 60
+  radius: 100
   icon: mdi:airport
