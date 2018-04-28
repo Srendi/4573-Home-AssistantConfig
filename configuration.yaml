@@ -134,8 +134,17 @@ sun:
 
 # Weather prediction
 sensor:
-  - platform: moon
+  - platform: uptime
   
+  - platform: moon
+  # DNS resolver
+  - platform: dnsip
+    hostame: !secret external_HOST
+    resolver: 8.8.8.8
+  - platform: dnsip
+    hostname: !secret local_HOST
+    resolver: !secret local_DNS
+
   - platform: cert_expiry
     host: !secret http_base_url
     port: 8123
