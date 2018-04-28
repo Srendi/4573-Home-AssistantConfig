@@ -137,10 +137,12 @@ sensor:
   - platform: uptime
 
   - platform: moon
+
   # DNS resolver
   - platform: dnsip
     hostame: !secret external_HOST
-    resolver: 8.8.8.8
+    resolver: !secret external_DNS
+
   - platform: dnsip
     hostname: !secret local_HOST
     resolver: !secret local_DNS
