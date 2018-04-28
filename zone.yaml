@@ -29,8 +29,8 @@
   icon: mdi:store
 
 - name: "Coolum Beach SLSC"
-  latitude: -26.5312964
-  longitude: 153.0902601
+  latitude: -26.5313322
+  longitude: 153.0923272
   radius: 100
   icon: mdi:briefcase
 
