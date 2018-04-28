@@ -1,9 +1,19 @@
 # Example using a delay after start of Home Assistant
-
-- alias: 'Start HomeKit'
+- id: automation01
+  alias: 'Start HomeKit'
   trigger:
     - platform: homeassistant
       event: start
   action:
     - delay: 00:05  # Waits 5 minutes
     - service: homekit.start
+
+- id: automation02
+  alias: 'Update Kodi'
+  trigger:
+    platform: time
+    # When 'at' is used, you cannot also match on hour, minute, seconds.
+    # Military time format.
+    at: '00:42:00'
+  action: 
+    service: script.update_library
