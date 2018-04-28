@@ -146,7 +146,7 @@ sensor:
 
   # DNS resolver
   - platform: dnsip
-    hostame: !secret external_HOST
+    hostname: !secret external_HOST
     resolver: !secret external_DNS
 
   - platform: dnsip
