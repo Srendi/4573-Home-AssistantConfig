@@ -2,6 +2,7 @@
 !*.yaml
 !scenes
 !.gitignore
+!gitupdate.sh
 secrets.yaml
 known_devices.yaml
 known_devices.yaml.AUTO
