@@ -204,21 +204,21 @@ mqtt:
 
 # Cloud
 cloud:
- google_actions:
-   filter:
-     include_entities:
-       - media_player.BedKodi
+  google_actions:
+    filter:
+      include_entities:
+        - media_player.BedKodi
 #       - light.kitchen_left
-     include_domains:
+#      include_domains:
 #       - switch
 #     exclude_entities:
 #       - switch.outside
-#   entity_config:
-     # switch.kitchen:
-     #   name: Custom Name for Google Assistant
-     #   aliases:
-     #    - bright lights
-     #    - entry lights
+    entity_config:
+      media_player.BedKodi:
+        name: Bed Kodi
+        aliases:
+#        - Bed Kodi
+         - Media Players
 google_assistant:
   project_id: !secret google_assistant_PROJECT_ID
   client_id: !secret google_assistant_CLIENT_ID
