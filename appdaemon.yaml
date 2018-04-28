@@ -6,10 +6,10 @@ log:
   log_size: 1000000
 appdaemon:
   threads: 10
-  latitude: homeassistant_latitude
-  longitude: homeassistant_longitude
-  elevation: homeassistant_elevation
-  time_zone: Australia/Brisbane
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  time_zone: !secret homeassistant_time_zone
   api_port: 5000
   api_key: !secret appdaemon_key
   api_ssl_certificate: !secret ssl_certificate
@@ -17,7 +17,7 @@ appdaemon:
   plugins:
     HASS:
       type: hass
-      ha_url: !secret http_base_url
+      ha_url: !secret http_url
       ha_key: !secret home_assistant_key
       cert_path: !secret ssl_certificate
       cert_verify: False
