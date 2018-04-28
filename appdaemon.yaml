@@ -6,7 +6,10 @@ log:
   log_size: 1000000
 appdaemon:
   threads: 10
-#  time_zone: <time zone>
+  latitude: homeassistant_latitude
+  longitude: homeassistant_longitude
+  elevation: homeassistant_elevation
+  time_zone: Australia/Brisbane
   api_port: 5000
   api_key: !secret appdaemon_key
   api_ssl_certificate: !secret ssl_certificate
