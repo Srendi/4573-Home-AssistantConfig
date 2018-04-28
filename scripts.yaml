@@ -12,3 +12,9 @@ update_library:
       data:
         entity_id: media_player.LoungeKodi
         method: VideoLibrary.Scan
+    - alias: Speak BedKodi Library Update Complete
+      service: tts.google_say
+      entity_id: media_player.bedkodi
+      data:
+        message: "Bed Kodi Media Libraries have been updated"
+#{"entity_id": "media_player.bedkodi","message": "May the Force be with you."}

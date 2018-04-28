@@ -25,6 +25,10 @@ config:
 media_player:
   - platform: cast
 
+  - platform: gpmdp
+    host: !secret laptop_IP
+    name: Media_Player_IDS-Laptop
+
   - platform: kodi
   # BedKodi
     name: BedKodi
