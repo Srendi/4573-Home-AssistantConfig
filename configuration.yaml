@@ -135,7 +135,7 @@ sun:
 # Weather prediction
 sensor:
   - platform: uptime
-  
+
   - platform: moon
   # DNS resolver
   - platform: dnsip
@@ -146,7 +146,7 @@ sensor:
     resolver: !secret local_DNS
 
   - platform: cert_expiry
-    host: !secret http_base_url
+    host: !secret https_base_url
     port: 8123
 
   - platform: haveibeenpwned
