@@ -7,6 +7,7 @@ secrets.yaml
 known_devices.yaml
 known_devices.yaml.AUTO
 download_files
+compiled
 www
 images
 # Logs
