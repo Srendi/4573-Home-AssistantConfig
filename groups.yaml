@@ -1,0 +1,49 @@
+kitchen:
+  name: Kitchen
+  # icon: mdi:account-multiple
+  # view: yes
+  # entities:
+  #   - switch.kitchen_pin_3
+Loungeroom:
+  name: Lounge Room
+  # icon: mdi:account-multiple
+  # view: yes
+  # entities:
+Laundry:
+  name: Laundry
+
+Bathroom:
+  name: Bathroom
+
+Toilet:
+  name: Toilet
+
+Bedroom:
+  name: Bedroom
+
+SpareBedroom:
+  name: Spare Bedroom
+
+ComputerRoom:
+  name: Computer Room
+
+Hallway:
+  name: Hallway
+
+Garage:
+  name: Garage
+
+Atrium:
+  name: Atrium
+
+FrontYard:
+  name: Front Yard
+
+BackYard:
+  name: Back Yard
+
+SideYard:
+  name: Side Yard
+
+Carport:
+  name: Carport
