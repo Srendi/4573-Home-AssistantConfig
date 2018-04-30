@@ -8,6 +8,7 @@ known_devices.yaml
 known_devices.yaml.AUTO
 download_files
 www
+images
 # Logs
 logs
 *.log

@@ -1,49 +1,103 @@
-kitchen:
-  name: Kitchen
-  # icon: mdi:account-multiple
-  # view: yes
-  # entities:
-  #   - switch.kitchen_pin_3
+# default_view:
+#   view: yes
+#   icon: mdi:home
+#   entities:
+#     - group.kitchen
+#     - group.awesome_people
+#     - group.climate
+
+# kitchen:
+#   name: Kitchen
+#   icon: mdi:account-multiple
+#   view: yes
+#   entities:
+#     - switch.kitchen_pin_3
 Loungeroom:
   name: Lounge Room
   # icon: mdi:account-multiple
   # view: yes
-  # entities:
-Laundry:
-  name: Laundry
+  entities:
+    - device_tracker.bedkodi
 
-Bathroom:
-  name: Bathroom
+# Laundry:
+#   name: Laundry
 
-Toilet:
-  name: Toilet
+# Bathroom:
+#   name: Bathroom
 
-Bedroom:
-  name: Bedroom
+# Toilet:
+#   name: Toilet
 
-SpareBedroom:
-  name: Spare Bedroom
+# Bedroom:
+#   name: Bedroom
+
+# SpareBedroom:
+#   name: Spare Bedroom
 
 ComputerRoom:
   name: Computer Room
+  entities:
+    - device_tracker.wdmycloud
+    - device_tracker.asuspc
+    - device_tracker.qnapnas
+    - device_tracker.mediarouter
+    - device_tracker.canonprinter
+    - device_tracker.mikrotik
+    - device_tracker.d7800
 
-Hallway:
-  name: Hallway
+# Hallway:
+#   name: Hallway
 
-Garage:
-  name: Garage
+# Garage:
+#   name: Garage
 
-Atrium:
-  name: Atrium
+# Atrium:
+#   name: Atrium
 
-FrontYard:
-  name: Front Yard
+# FrontYard:
+#   name: Front Yard
 
-BackYard:
-  name: Back Yard
+# BackYard:
+#   name: Back Yard
 
-SideYard:
-  name: Side Yard
+# SideYard:
+#   name: Side Yard
 
-Carport:
-  name: Carport
+# Carport:
+#   name: Carport
+
+Phones:
+  name: Phones
+  icon: mdi:android
+  entities:
+    - device_tracker.sonyxperia
+    - device_tracker.lynnesiphone
+    - device_tracker.raesandroid
+    - device_tracker.raesiphone
+    - device_tracker.lilysandroid
+
+# alarm:
+#   name: Alarm
+#   view: yes
+#   entities:
+#     - group.alarm_status
+#     - group.alert
+#     - group.doors
+#     - group.cameras
+#     - group.party
+
+# blinds:
+#   name: blinds
+#   view: yes
+#   entities:
+#     - group.brawler
+
+# environment:
+#   name: environment
+#   view: yes
+#   entities:
+#     - group.temperature
+#     - group.humidity
+#     - group.light
+#     - group.sound
+#     - group.weather
