@@ -101,3 +101,14 @@ Phones:
 #     - group.light
 #     - group.sound
 #     - group.weather
+
+# Family:
+#   name: family
+#   view: yes
+#   entities:
+#     - group.ben
+#     - group.cailin
+#     - device_tracker.ben6p_ben6p
+#     - device_tracker.cailin6p_cailin6p
+#     - device_tracker.watch_moto360
+

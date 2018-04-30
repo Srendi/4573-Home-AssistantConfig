@@ -22,3 +22,10 @@ appdaemon:
       cert_path: !secret ssl_certificate
       cert_verify: False
       namespace: default
+hadashboard:
+  dash_url: !secret dash_URL
+  dash_ssl_certificate: !secret ssl_certificate
+  dash_ssl_key: !secret ssl_key
+  dash_password: !secret dash_PASS
+  accessfile: /var/log/dash_access
+  #dashboard_dir: 
