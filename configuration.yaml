@@ -19,6 +19,7 @@ introduction:
 
 # Enables the frontend
 frontend:
+  javascript_version: latest
 #  themes:
 
 # Enables configuration UI
@@ -192,7 +193,7 @@ sensor:
       - press
 #      - press_qnh
 #      - press_msl
-      - press_tend
+#      - press_tend
       - rain_trace
       - rel_hum
 #      - sea_state
@@ -200,7 +201,7 @@ sensor:
 #      - swell_height
 #      - swell_period
       - vis_km
-      - weather
+#      - weather
       - wind_dir
       - wind_spd_kmh
 #      - wind_spd_kt
