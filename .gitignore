@@ -2,6 +2,7 @@
 !*.yaml
 !scenes
 !.gitignore
+!*.dash
 !gitupdate.sh
 secrets.yaml
 known_devices.yaml
@@ -11,6 +12,7 @@ compiled
 www
 images
 !custom_css
+!dashboards
 # Logs
 logs
 *.log
