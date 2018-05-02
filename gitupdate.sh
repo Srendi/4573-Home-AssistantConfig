@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git add .
 git add *
 git status
 if [[ -z $1 ]]; then
