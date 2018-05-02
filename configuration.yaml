@@ -363,3 +363,5 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 zone: !include zone.yaml
+switch: !include switches.yaml
+

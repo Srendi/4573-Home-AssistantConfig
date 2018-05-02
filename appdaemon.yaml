@@ -28,4 +28,5 @@ hadashboard:
   dash_ssl_key: !secret ssl_key
   dash_password: !secret dash_PASS
   accessfile: /var/log/dash_access
+  dash_force_compile: 1
   #dashboard_dir: 
