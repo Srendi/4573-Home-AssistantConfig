@@ -10,6 +10,7 @@ download_files
 compiled
 www
 images
+!custom_css
 # Logs
 logs
 *.log
