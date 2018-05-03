@@ -75,6 +75,23 @@ Phones:
     - device_tracker.raesandroid
     - device_tracker.raesiphone
     - device_tracker.lilysandroid
+    # Gavin (Android)
+    - device_tracker.google_maps_102041801480434384144
+    # Mum (iPhone)
+    - device_tracker.google_maps_111254142608163799065
+    # Rae (iPhone)
+    - device_tracker.google_maps_117660528972668882643
+    # Rae (Android)
+    - device_tracker.google_maps_111307081946649854814
+    # Lily (Android)
+    - device_tracker.google_maps_109600692196833190615
+
+Laptops:
+  name: Laptops
+  icon: mdi:laptop-windows
+  entities:
+    - device_tracker.idslaptop
+    - device_tracker.kirstslaptop
 
 # alarm:
 #   name: Alarm
