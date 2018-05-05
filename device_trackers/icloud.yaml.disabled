@@ -1,4 +1,4 @@
 # platform: icloud
-# username: USERNAME
-# password: PASSWORD
-# account_name: accountname
+# username: !sercet icloud_USER
+# password: !sercet icloud_PASS
+# account_name: !sercet icloud_ACCOUNT

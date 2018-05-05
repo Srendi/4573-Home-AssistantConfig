@@ -157,10 +157,13 @@ notify:
 
 ###########INCLUDES#####
 alert: !include_dir_merge_named alerts/
+
+# To do: Separate automations
 automation: !include automations.yaml
 cover: !include_dir_list covers/
 input_boolean: !include misc/input_boolean.yaml
 input_select: !include misc/input_select.yaml
+
 # Input_slider broken
 #input_slider: !include misc/input_slider.yaml
 binary_sensor: !include_dir_list binary_sensors/
@@ -173,9 +176,13 @@ light: !include_dir_list lights/
 shell_command: !include misc/shell_commands.yaml
 switch: !include_dir_list switches/
 script: !include_dir_merge_named scripts/
+
+# To do: Separate intent_scripts into dir_list
 #intent_script: !include_dir_list voice/intent_scripts/
 intent_script: !include_dir_merge_named voice/intent_scripts/
 alexa: !include_dir_list voice/alexa/
+
+# To do: Cleanup & Separate groups
 group: !include groups.yaml
 weather: !include_dir_list weather/
 weblink: !include misc/weblinks.yaml
