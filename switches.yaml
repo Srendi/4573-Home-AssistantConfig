@@ -1,5 +1,0 @@
-platform: command_line
-switches:
-  home_assistant_backup2dropbox:
-    friendly_name: Backup HASS to Dropbox
-    command_on: "python /home/homeassistant/Dropbox-Uploader/dropbox_sync.py"
