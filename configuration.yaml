@@ -293,6 +293,7 @@ device_tracker:
   #   password: !secret huawei_PASS
   
   - platform: ping
+    count: 4
     hosts:
       mikrotik: 192.168.1.254
 
