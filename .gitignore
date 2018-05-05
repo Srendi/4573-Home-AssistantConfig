@@ -11,6 +11,7 @@ download_files
 compiled
 www
 images
+.cloud
 !custom_css
 !dashboards
 # Logs
@@ -80,4 +81,5 @@ google_calendars.yaml
 components
 deps
 tts
- .google_maps_location_sharing.*
+.google_maps_location_sharing.*
+.homekit.state

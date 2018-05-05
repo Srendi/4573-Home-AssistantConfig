@@ -17,6 +17,10 @@ homeassistant:
 # Show links to resources in log and frontend
 introduction:
 
+# Shopping list intent 
+# https://www.home-assistant.io/components/shopping_list/
+shopping_list:
+
 # Enables the frontend
 frontend:
   javascript_version: latest
@@ -24,49 +28,6 @@ frontend:
 
 # Enables configuration UI
 config:
-
-media_player:
-  - platform: cast
-
-  - platform: gpmdp
-    host: !secret laptop_IP
-    name: Media_Player_IDS-Laptop
-
-  - platform: kodi
-  # BedKodi
-    name: BedKodi
-    host: !secret bedkodi_HOST
-    username: !secret bedkodi_USER
-    password: !secret bedkodi_PASS
-    turn_on_action:
-      - service: wake_on_lan.send_magic_packet
-        data:
-          # WiFi?
-          mac: !secret bedkodi_MAC
-          broadcast_address: !secret LAN_BROADCAST
-    turn_off_action:
-      service: media_player.kodi_call_method
-      data:
-        entity_id: media_player.BedKodi
-        method: System.Shutdown
-
-  - platform: kodi
-  # LoungeKodi
-    name: LoungeKodi
-    host: !secret loungekodi_HOST
-    username: !secret loungekodi_USER
-    password: !secret loungekodi_PASS
-    turn_on_action:
-      - service: wake_on_lan.send_magic_packet
-        data:
-          # WiFi?
-          mac: !secret loungekodi_MAC
-          broadcast_address: !secret LAN_BROADCAST
-    turn_off_action:
-      service: media_player.kodi_call_method
-      data:
-        entity_id: media_player.LoungeKodi
-        method: System.Shutdown
 
 http:
   # Secrets are defined in the file secrets.yaml
@@ -82,7 +43,6 @@ http:
   use_x_forwarded_for: True
   # Passwordless access
   trusted_networks: !secret home_trusted_networks
-
   # Prevent too many failed login attempes
   ip_ban_enabled: true
   login_attempts_threshold: 3
@@ -118,9 +78,6 @@ discovery:
 ifttt:
   key: !secret ifttt_key
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
 # ffmpeg
 ffmpeg:
 
@@ -135,89 +92,12 @@ logger:
   default: info
   logs:
     homeassistant.components.http.ban: warning
+
 # Enables a map showing the location of tracked devices
 map:
 
 # Track the sun
 sun:
-
-# Weather prediction
-sensor:
-  - platform: uptime
-
-  - platform: moon
-
-  - platform: darksky
-    api_key: !secret darksky_API
-    monitored_conditions:
-      - summary
-      - icon
-      - nearest_storm_distance
-      - precip_intensity
-      - precip_probability
-      - precip_type
-      - cloud_cover
-
-  # DNS resolver
-  - platform: dnsip
-    hostname: !secret external_HOST
-    resolver: !secret external_DNS
-
-  - platform: dnsip
-    hostname: !secret local_HOST
-    resolver: !secret local_DNS
-
-  - platform: cert_expiry
-    host: !secret https_base_url
-    port: 8123
-
-  - platform: haveibeenpwned
-    email: !secret haveibeenpwned_check
-
-  - platform: waqi
-    token: !secret AQICN_API_TOKEN
-    locations:
-      - mountain creek
-#    stations:
-#      - Beijing US Embassy
-
-  - platform: yr
-#sensor:
-  - platform: bom
-    # TewantinNoosa
-    # IDQ60901.94570
-    # Toowoomba
-    # IDQ60901.95551
-    # Sunshine Coast Airport
-    station: IDQ60901.94569
-    name: Sunshine Coast Airport
-    monitored_conditions:
-      - apparent_t
-#      - cloud
-#      - cloud_base_m
-#      - cloud_oktas
-#      - cloud_type_id
-#      - cloud_type
-#      - delta_t
-      - gust_kmh
-#      - gust_kt
-      - air_temp
-#      - dewpt
-      - press
-#      - press_qnh
-#      - press_msl
-#      - press_tend
-      - rain_trace
-      - rel_hum
-#      - sea_state
-#      - swell_dir_worded
-#      - swell_height
-#      - swell_period
-      - vis_km
-#      - weather
-      - wind_dir
-      - wind_spd_kmh
-#      - wind_spd_kt
 
 # Text to speech
 tts:
@@ -238,23 +118,6 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
 
-# Cloud
-cloud:
-  google_actions:
-    filter:
-      include_entities:
-        - media_player.BedKodi
-#       - light.kitchen_left
-#      include_domains:
-#       - switch
-#     exclude_entities:
-#       - switch.outside
-    entity_config:
-      media_player.BedKodi:
-        name: Bed Kodi
-        aliases:
-#        - Bed Kodi
-         - Media Players
 google_assistant:
   project_id: !secret google_assistant_PROJECT_ID
   client_id: !secret google_assistant_CLIENT_ID
@@ -280,113 +143,42 @@ google_assistant:
 homekit:
   auto_start: False
 
-# Tracker
-device_tracker:
-  # - platform: mikrotik
-  #   host: !secret mikrotik_IP
-  #   username: !secret mikrotik_USER
-  #   password: !secret mikrotik_PASS
-
-  # - platform: huawei_router
-  #   host: !secret huawei_IP
-  #   username: !secret huawei_USER
-  #   password: !secret huawei_PASS
-  
-  - platform: ping
-    count: 4
-    hosts:
-      mikrotik: 192.168.1.254
-
-  - platform: nmap_tracker
-    interval_seconds: 60
-    consider_home: 120
-    track_new_devices: yes
-    exclude: !secret local_IP
-    hosts: !secret nmap_tracked_hosts
-
-  # - platform: google_maps
-  #   username: !secret mygoogleuser
-  #   password: !secret mygooglepassword
-
-  - platform: google_maps
-    username: !secret mygoogleuser2
-    password: !secret mygooglepassword2
-
-  - platform: owntracks
-    max_gps_accuracy: 200
-    waypoints: True
-    mqtt_topic: "owntracks/#"
-    events_only: True
-    waypoint_whitelist:
-      - Device-15
-      - Device-01
-      - Gavins-Android
-      - Raes-Android
-#    region_mapping:
-#      cabin: home
-#      office: work
-alexa:
 # Google Assistant Speach Thing
 # https://www.home-assistant.io/components/dialogflow/
 # https://github.com/home-assistant/home-assistant.github.io/blob/next/source/assets/HomeAssistant_APIAI.zip (Imported into Dialogueflow website)
 dialogflow:
 
-intent_script:
-  Temperature:
-    speech:
-      text: The temperature at home is {{ states('sensor.home_temp') }} degrees
-  LocateIntent:
-    speech:
-      text: >
-        {%- for state in states.device_tracker -%}
-          {%- if state.name.lower() == User.lower() -%}
-            {{ state.name }} is at {{ state.state }}
-          {%- elif loop.last -%}
-            I am sorry, I do not know where {{ User }} is.
-          {%- endif -%}
-        {%- else -%}
-          Sorry, I don't have any trackers registered.
-        {%- endfor -%}
-  WhereAreWeIntent:
-    speech:
-      text: >
-        {%- if is_state('device_tracker.adri', 'home') and
-               is_state('device_tracker.bea', 'home') -%}
-          You are both home, you silly
-        {%- else -%}
-          Bea is at {{ states("device_tracker.bea") }}
-          and Adri is at {{ states("device_tracker.adri") }}
-        {% endif %}
-  TurnLights:
-    speech:
-      text: Turning {{ Room }} lights {{ OnOff }}
-    action:
-      - service: notify.pushbullet
-        data_template:
-          message: Someone asked via apiai to turn {{ Room }} lights {{ OnOff }}
-      - service_template: >
-          {%- if OnOff == "on" -%}
-            switch.turn_on
-          {%- else -%}
-            switch.turn_off
-          {%- endif -%}
-        data_template:
-          entity_id: "switch.light_{{ Room | replace(' ', '_') }}"
 notify:
   - name: HASS_Chrome_Notifier
     platform: html5
     gcm_api_key: !secret gcm_server_key
     gcm_sender_id: !secret gcm_sender_id
 
-camera:
-  platform: generic
-  still_image_url: !secret weather_radar_URL
-  name: !secret weather_radar_NAME
-  #limit_refetch_to_url_change: true
 
-group: !include groups.yaml
+###########INCLUDES#####
+alert: !include_dir_merge_named alerts/
 automation: !include automations.yaml
-script: !include scripts.yaml
-zone: !include zone.yaml
-switch: !include switches.yaml
-
+cover: !include_dir_list covers/
+input_boolean: !include misc/input_boolean.yaml
+input_select: !include misc/input_select.yaml
+# Input_slider broken
+#input_slider: !include misc/input_slider.yaml
+binary_sensor: !include_dir_list binary_sensors/
+device_sun_light_trigger: !include device_sun_light_trigger.yaml
+device_tracker: !include_dir_list device_trackers/*.yaml
+cloud: !include cloud.yaml
+conversation: !include_dir_list voice/intents/
+sensor: !include_dir_list sensors/
+light: !include_dir_list lights/
+shell_command: !include misc/shell_commands.yaml
+switch: !include_dir_list switches/
+script: !include_dir_merge_named scripts/
+#intent_script: !include_dir_list voice/intent_scripts/
+intent_script: !include_dir_merge_named voice/intent_scripts/
+alexa: !include_dir_list voice/alexa/
+group: !include groups.yaml
+weather: !include_dir_list weather/
+weblink: !include misc/weblinks.yaml
+zone: !include_dir_list zones/*.yaml
+camera: !include_dir_list cameras/
+media_player: !include_dir_list media_players/*.yaml

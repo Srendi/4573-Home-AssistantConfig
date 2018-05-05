@@ -51,3 +51,35 @@
     service: notify.html5
     data:
       message: "Rain stopped, lights off"
+
+- id: automation05
+  alias: Turn on room light when there is movement
+  trigger:
+    platform: state
+    entity_id: sensor.motion_sensor_
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.kitchen_light
+
+- id: automation06
+  alias: Turn off room light 2 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: sensor.motion_sensor
+    to: 'off'
+    for:
+      minutes: 2
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.kitchen_light
+
+- id: automation07
+  alias: 'Update Available Notifications'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.notify
+    data:
+      message: 'Update for Home Assistant is available.'
