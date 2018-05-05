@@ -32,6 +32,16 @@ images
 # Logs
 logs
 *.log
+*~
+.project
+.pydevproject
+.settings/
+env
+google_calendars.yaml
+mpd.conf
+build
+TODO.txt
+
 npm-debug.log*
 
 # Runtime data
