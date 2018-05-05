@@ -1,5 +1,5 @@
 name: "Woolies Coolum"
-latitude: -26.5385707
-longitude: 153.0788934
+latitude: !secret coolum_woolies_latitude
+longitude: !secret coolum_woolies_longitude
 radius: 120
 icon: mdi:store
