@@ -1,0 +1,4 @@
+# google maps ge
+platform: google_maps
+username: !secret mygoogleuser2
+password: !secret mygooglepassword2

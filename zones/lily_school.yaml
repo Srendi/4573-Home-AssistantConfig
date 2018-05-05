@@ -1,0 +1,5 @@
+name: "Lily's School"
+latitude: !secret lily_school_latitude
+longitude: !secret lily_school_longitude
+radius: 250
+icon: mdi:school

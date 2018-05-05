@@ -3,6 +3,7 @@
 !scenes
 !.gitignore
 !*.dash
+!*.disabled
 !gitupdate.sh
 secrets.yaml
 known_devices.yaml
@@ -14,6 +15,20 @@ images
 .cloud
 !custom_css
 !dashboards
+!weather
+!zones
+!voice
+!switches
+!sensors
+!scripts
+!misc
+!media_players
+!lights
+!device_trackers
+!covers
+!cameras
+!binary_sensors
+!alerts
 # Logs
 logs
 *.log

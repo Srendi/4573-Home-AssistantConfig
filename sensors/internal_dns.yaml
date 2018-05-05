@@ -1,0 +1,4 @@
+# Internal DNS resolver
+platform: dnsip
+hostname: !secret local_HOST
+resolver: !secret local_DNS

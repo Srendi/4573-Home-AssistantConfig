@@ -1,0 +1,24 @@
+# Update Kodi Libraries
+update_library:
+  alias: Update Kodi Libraries
+  sequence:
+    - alias: Speak Kodi Libraries Update Beginning
+      service: tts.google_say
+      entity_id: media_player.bedkodi
+      data:
+        message: "Kodi Media Libraries are updating"
+    - alias: Call BedKodi update
+      service: media_player.kodi_call_method
+      data:
+        entity_id: media_player.BedKodi
+        method: VideoLibrary.Scan
+    - alias: Call LoungeKodi update
+      service: media_player.kodi_call_method
+      data:
+        entity_id: media_player.LoungeKodi
+        method: VideoLibrary.Scan
+    - alias: Notify to chrome
+      service: notify.html5
+      data:
+        message: "Kodi Media Libraries are updating"
+#{"entity_id": "media_player.bedkodi","message": "May the Force be with you."}

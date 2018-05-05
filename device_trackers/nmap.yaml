@@ -1,0 +1,6 @@
+platform: nmap_tracker
+interval_seconds: 60
+consider_home: 120
+track_new_devices: yes
+exclude: !secret local_IP
+hosts: !secret nmap_tracked_hosts

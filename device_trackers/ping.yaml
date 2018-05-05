@@ -1,0 +1,4 @@
+platform: ping
+count: 4
+hosts:
+  mikrotik: !secret mikrotik_PING_IP

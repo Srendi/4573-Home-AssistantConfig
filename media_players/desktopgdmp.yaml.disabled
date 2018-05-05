@@ -1,0 +1,4 @@
+# platform: gpmdp
+# add these to secrets.yaml before uncommenting
+# host: !secret desktop_IP
+# name: !secret dekstop_NAME

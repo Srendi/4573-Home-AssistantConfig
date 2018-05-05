@@ -1,0 +1,4 @@
+# Google Maps sr
+# platform: google_maps
+# username: !secret mygoogleuser
+# password: !secret mygooglepassword

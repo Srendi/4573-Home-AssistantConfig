@@ -1,0 +1,3 @@
+platform: gpmdp
+host: !secret laptop_IP
+name: !secret laptop_NAME

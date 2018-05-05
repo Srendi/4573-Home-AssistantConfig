@@ -1,0 +1,6 @@
+# https://www.worldtides.info/home
+platform: worldtidesinfo
+api_key: !secret world_tides_API_KEY
+# name: 
+# latitude: 
+# longitude: 

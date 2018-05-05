@@ -1,0 +1,17 @@
+platform: kodi
+# BedKodi
+name: BedKodi
+host: !secret bedkodi_HOST
+username: !secret bedkodi_USER
+password: !secret bedkodi_PASS
+turn_on_action:
+  - service: wake_on_lan.send_magic_packet
+    data:
+      # WiFi?
+      mac: !secret bedkodi_MAC
+      broadcast_address: !secret LAN_BROADCAST
+turn_off_action:
+  service: media_player.kodi_call_method
+  data:
+    entity_id: media_player.BedKodi
+    method: System.Shutdown

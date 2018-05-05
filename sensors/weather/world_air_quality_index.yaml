@@ -1,0 +1,7 @@
+# https://waqi.info/
+platform: waqi
+token: !secret AQICN_API_TOKEN
+locations:
+  - mountain creek
+#    stations:
+#      - Beijing US Embassy

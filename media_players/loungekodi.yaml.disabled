@@ -1,0 +1,17 @@
+# platform: kodi
+# # LoungeKodi
+# name: LoungeKodi
+# host: !secret loungekodi_HOST
+# username: !secret loungekodi_USER
+# password: !secret loungekodi_PASS
+# turn_on_action:
+#   - service: wake_on_lan.send_magic_packet
+#     data:
+#       # WiFi?
+#       mac: !secret loungekodi_MAC
+#       broadcast_address: !secret LAN_BROADCAST
+# turn_off_action:
+#   service: media_player.kodi_call_method
+#   data:
+#     entity_id: media_player.LoungeKodi
+#     method: System.Shutdown

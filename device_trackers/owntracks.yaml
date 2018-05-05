@@ -1,0 +1,13 @@
+platform: owntracks
+max_gps_accuracy: 200
+waypoints: True
+mqtt_topic: "owntracks/#"
+events_only: True
+waypoint_whitelist:
+  - Device-15
+  - Device-01
+  - Gavins-Android
+  - Raes-Android
+# region_mapping:
+#   cabin: home
+#   office: work

@@ -1,0 +1,4 @@
+# platform: mikrotik
+# host: !secret mikrotik_IP
+# username: !secret mikrotik_USER
+# password: !secret mikrotik_PASS

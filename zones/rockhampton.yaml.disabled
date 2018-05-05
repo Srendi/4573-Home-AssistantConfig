@@ -1,0 +1,5 @@
+# name: "Rockhampton"
+# latitude: !secret rockhampton_latitude
+# longitude: !secret rockhampton_longitude
+# radius: 10000
+# #icon: mdi:home-heart 
