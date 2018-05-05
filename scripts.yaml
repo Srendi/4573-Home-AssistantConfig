@@ -23,7 +23,8 @@ update_library:
         message: "Kodi Media Libraries are updating"
 #{"entity_id": "media_player.bedkodi","message": "May the Force be with you."}
 
-script.sync_dropbox:
-  icon: mdi:dropbox
-  custom_ui_state_card: state-card-script-custom-text
-  custom_text: "Sync To Dropbox"
+# script.sync_dropbox:
+#   alias: Sync Config to DropBox
+#   icon: mdi:dropbox
+#   custom_ui_state_card: state-card-script-custom-text
+#   custom_text: "Sync To Dropbox"
