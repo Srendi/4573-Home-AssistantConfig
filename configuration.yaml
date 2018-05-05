@@ -133,6 +133,8 @@ logbook:
 # Logging
 logger:
   default: info
+  logs:
+    homeassistant.components.http.ban: warning
 # Enables a map showing the location of tracked devices
 map:
 
@@ -144,6 +146,16 @@ sensor:
   - platform: uptime
 
   - platform: moon
+
+  - platform: darksky
+    api_key: !secret darksky_API
+    monitored_conditions:
+      - summary
+      - icon
+      - nearest_storm_distance
+      - precip_intensity
+      - precip_probability
+      - cloud_cover
 
   # DNS resolver
   - platform: dnsip
@@ -359,6 +371,12 @@ notify:
     platform: html5
     gcm_api_key: !secret gcm_server_key
     gcm_sender_id: !secret gcm_sender_id
+
+camera:
+  platform: generic
+  still_image_url: !secret weather_radar_URL
+  name: !secret weather_radar_NAME
+  #limit_refetch_to_url_change: true
 
 group: !include groups.yaml
 automation: !include automations.yaml
