@@ -5,6 +5,7 @@
 !*.dash
 !gitupdate.sh
 secrets.yaml
+zone.yaml
 known_devices.yaml
 known_devices.yaml.AUTO
 download_files
