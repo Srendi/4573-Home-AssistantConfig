@@ -291,7 +291,11 @@ device_tracker:
   #   host: !secret huawei_IP
   #   username: !secret huawei_USER
   #   password: !secret huawei_PASS
-   
+  
+  - platform: ping
+    hosts:
+      mikrotik: 192.168.1.254
+
   - platform: nmap_tracker
     interval_seconds: 60
     consider_home: 120
