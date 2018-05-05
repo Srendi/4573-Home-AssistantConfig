@@ -155,6 +155,7 @@ sensor:
       - nearest_storm_distance
       - precip_intensity
       - precip_probability
+      - precip_type
       - cloud_cover
 
   # DNS resolver

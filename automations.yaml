@@ -6,6 +6,7 @@
   action:
   - delay: 00:05
   - service: homekit.start
+
 - id: automation02
   alias: Update Kodi
   trigger:
@@ -13,3 +14,40 @@
     platform: time
   action:
   - service: script.update_library
+
+- id: automation03
+  alias: Rainy Day
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_precip_type
+      to: rain
+  condition:
+    - condition: state
+      entity_id: group.Phones
+      state: home
+    - condition: time
+      after: '14:00:00'
+      before: '23:00:00'
+  action:
+    # service: light.turn_on
+    # entity_id: light.couch_lamp
+    service: notify.html5
+    data:
+      message: "Rain stopped, lights off"
+
+- id: automation04
+  alias: Rain is over
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_precip_type
+      to: none
+  condition:
+    - condition: sun
+      after: sunset
+      after_offset: "-01:00:00"
+  action:
+    # service: light.turn_off
+    # entity_id: light.couch_lamp
+    service: notify.html5
+    data:
+      message: "Rain stopped, lights off"
