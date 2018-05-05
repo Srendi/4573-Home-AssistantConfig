@@ -44,6 +44,7 @@ ComputerRoom:
     - device_tracker.canonprinter
     - device_tracker.mikrotik
     - device_tracker.d7800
+    - device_tracker.fog
 
 # Hallway:
 #   name: Hallway
