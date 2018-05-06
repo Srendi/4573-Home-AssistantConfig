@@ -1,5 +1,0 @@
-name: "Carmel's Home"
-latitude: !secret carmel_home_latitude
-longitude: !secret carmel_home_longitude
-radius: 200
-icon: mdi:home-heart

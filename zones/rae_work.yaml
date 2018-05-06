@@ -1,5 +1,0 @@
-name: "Rae's Work"
-latitude: !secret rae_work_latitude
-longitude: !secret rae_work_longitude
-radius: 100
-icon: mdi:briefcase

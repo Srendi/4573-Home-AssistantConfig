@@ -1,5 +1,0 @@
-name: "Brady's Home"
-latitude: !secret brady_home_latitude
-longitude: !secret brady_home_longitude
-radius: 200
-icon: mdi:home-heart

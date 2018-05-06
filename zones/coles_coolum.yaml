@@ -1,5 +1,0 @@
-name: "Coles Coolum"
-latitude: !secret coolum_coles_latitude
-longitude: !secret coolum_coles_longitude
-radius: 120
-icon: mdi:store
