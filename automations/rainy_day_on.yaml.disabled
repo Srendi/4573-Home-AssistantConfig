@@ -1,0 +1,18 @@
+alias: Rainy Day
+trigger:
+  platform: state
+  entity_id: sensor.dark_sky_precip_type
+  to: rain
+condition:
+  - condition: state
+    entity_id: group.phones
+    state: home
+  - condition: time
+    after: '14:00:00'
+    before: '23:00:00'
+action:
+  # service: light.turn_on
+  # entity_id: light.couch_lamp
+  service: notify.html5
+  data:
+    message: "Rain stopped, lights off"

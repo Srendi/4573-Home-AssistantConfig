@@ -170,7 +170,7 @@ scene: !include_dir_list scenes/
 #device_sun_light_trigger: !include device_sun_light_trigger.yaml
 device_tracker: !include_dir_list device_trackers/*.yaml
 cloud: !include cloud.yaml
-conversation: !include_dir_list voice/intents/
+conversation: !include_dir_list voice/intents/*.yaml
 sensor: !include_dir_list sensors/
 #light: !include_dir_list lights/
 #shell_command: !include misc/shell_commands.yaml

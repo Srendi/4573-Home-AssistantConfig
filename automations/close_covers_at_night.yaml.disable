@@ -1,0 +1,10 @@
+alias: "Close covers at night"
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '+00:30:00'
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.cover_group
+        position: 25
