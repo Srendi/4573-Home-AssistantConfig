@@ -1,6 +1,6 @@
 alias: Update Kodi
 trigger:
-  at: 00:01:00
-platform: time
+  platform: time
+  at: '00:01:00'
 action:
   service: script.update_library

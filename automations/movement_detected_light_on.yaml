@@ -2,7 +2,7 @@ alias: Turn on room light when there is movement
 trigger:
   platform: state
   entity_id: sensor.motion_sensor_
-  to: 'on'
+  to: on
 action:
   service: homeassistant.turn_on
   entity_id: light.kitchen_light

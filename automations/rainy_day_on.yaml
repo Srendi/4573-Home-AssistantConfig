@@ -1,8 +1,8 @@
 alias: Rainy Day
 trigger:
-  - platform: state
-    entity_id: sensor.dark_sky_precip_type
-    to: rain
+  platform: state
+  entity_id: sensor.dark_sky_precip_type
+  to: rain
 condition:
   - condition: state
     entity_id: group.Phones
