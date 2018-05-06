@@ -1,0 +1,6 @@
+alias: Update Kodi
+trigger:
+  at: 00:01:00
+platform: time
+action:
+  service: script.update_library

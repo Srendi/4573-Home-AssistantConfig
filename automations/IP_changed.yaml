@@ -1,0 +1,10 @@
+alias: IP Changed
+trigger:
+  platform: state
+  entity_id: sensor.external_ip
+action:
+  service: script.notify
+  data_template:
+    notify_text: "The external IP address has changed to: '{{ states.sensor.external_ip.state }}'"
+    notify_mobile: True
+    is_warning: True

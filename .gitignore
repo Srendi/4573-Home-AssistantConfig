@@ -14,6 +14,7 @@ www
 images
 .cloud
 !custom_css
+!automations
 !dashboards
 !weather
 !zones

@@ -1,0 +1,15 @@
+alias: Rain is over
+trigger:
+  - platform: state
+    entity_id: sensor.dark_sky_precip_type
+    to: none
+condition:
+  - condition: sun
+    after: sunset
+    after_offset: "-01:00:00"
+action:
+  # service: light.turn_off
+  # entity_id: light.couch_lamp
+  service: notify.html5
+  data:
+    message: "Rain stopped, lights off"
