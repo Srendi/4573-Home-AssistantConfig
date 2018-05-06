@@ -5,7 +5,7 @@ trigger:
   to: rain
 condition:
   - condition: state
-    entity_id: group.Phones
+    entity_id: group.phones
     state: home
   - condition: time
     after: '14:00:00'

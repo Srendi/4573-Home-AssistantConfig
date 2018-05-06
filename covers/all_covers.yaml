@@ -1,0 +1,22 @@
+platform: group
+name: All_Covers
+entities:
+  - cover.loungeroom_doors
+  - cover.loungeroom_left_window
+  - cover.loungeroom_right_window
+  - cover.kitchen_east_window
+#  - cover.sparebedroom_door
+  - cover.sparebedroom_south_window
+  - cover.sparebedroom_east_window
+  - cover.toilet_window
+#  - cover.bathroom_window 
+#  - cover.bedroom_door
+  - cover.bedroom_left_window
+  - cover.bedroom_right_window 
+#  - cover.bedroom_west_window 
+#  - cover.bedroom_north_window 
+#  - cover.laundry_north_window 
+#  - cover.computerroom_north_window 
+#  - cover.computerroom_west_window 
+#  - cover.garage_north_window 
+  - cover.garage_rolladoor 

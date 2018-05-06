@@ -12,29 +12,29 @@
 #   view: yes
 #   entities:
 #     - switch.kitchen_pin_3
-Loungeroom:
+loungeroom:
   name: Lounge Room
   # icon: mdi:account-multiple
   # view: yes
   entities:
     - device_tracker.bedkodi
 
-# Laundry:
+# laundry:
 #   name: Laundry
 
-# Bathroom:
+# bathroom:
 #   name: Bathroom
 
-# Toilet:
+# toilet:
 #   name: Toilet
 
-# Bedroom:
+# bedroom:
 #   name: Bedroom
 
-# SpareBedroom:
+# sparebedroom:
 #   name: Spare Bedroom
 
-ComputerRoom:
+computerroom:
   name: Computer Room
   entities:
     - device_tracker.wdmycloud
@@ -46,28 +46,28 @@ ComputerRoom:
     - device_tracker.d7800
     - device_tracker.fog
 
-# Hallway:
+# hallway:
 #   name: Hallway
 
-# Garage:
+# garage:
 #   name: Garage
 
-# Atrium:
+# atrium:
 #   name: Atrium
 
-# FrontYard:
+# frontyard:
 #   name: Front Yard
 
-# BackYard:
+# backyard:
 #   name: Back Yard
 
-# SideYard:
+# sideyard:
 #   name: Side Yard
 
-# Carport:
+# carport:
 #   name: Carport
 
-Phones:
+phones:
   name: Phones
   icon: mdi:android
   entities:
@@ -87,7 +87,7 @@ Phones:
     # Lily (Android)
     - device_tracker.google_maps_109600692196833190615
 
-Laptops:
+laptops:
   name: Laptops
   icon: mdi:laptop-windows
   entities:
@@ -120,7 +120,7 @@ Laptops:
 #     - group.sound
 #     - group.weather
 
-# Family:
+# family:
 #   name: family
 #   view: yes
 #   entities:

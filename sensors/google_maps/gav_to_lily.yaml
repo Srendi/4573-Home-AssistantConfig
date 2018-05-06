@@ -3,3 +3,7 @@ name: GM Gav To Lily
 api_key: !secret google_time_travel_api_key
 origin: device_tracker.google_maps_102041801480434384144
 destination: device_tracker.google_maps_109600692196833190615
+options:
+  mode: driving
+  units: metric
+  departure_time: now

@@ -1,0 +1,23 @@
+platform: template
+covers:
+  garage_door:
+    friendly_name: "Garage Door"
+    position_template: "{{ states('sensor.garage_door') }}"
+    open_cover:
+      service: switch.turn_on
+      data:
+        entity_id: switch.garage_door
+    close_cover:
+      service: switch.turn_off
+      data:
+        entity_id: switch.garage_door
+    stop_cover:
+      service: switch.turn_on
+      data:
+        entity_id: switch.garage_door
+    icon_template: >-
+      {% if states('sensor.garage_door')|float > 0 %}
+        mdi:garage-open
+      {% else %}
+        mdi:garage
+      {% endif %}
