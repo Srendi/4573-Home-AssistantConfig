@@ -1,0 +1,15 @@
+cover_group_position:
+  sequence:
+    - service: cover.set_cover_position
+      data_template:
+        entity_id:
+          - cover.loungeroom_doors
+          - cover.loungeroom_left_window
+          - cover.loungeroom_right_window
+          - cover.kitchen_east_window
+          - cover.sparebedroom_south_window
+          - cover.sparebedroom_east_window
+          - cover.toilet_window
+          - cover.bedroom_left_window
+          - cover.bedroom_right_window 
+        position: "{{position}}"

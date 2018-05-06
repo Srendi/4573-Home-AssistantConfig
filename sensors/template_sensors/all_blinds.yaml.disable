@@ -1,0 +1,24 @@
+platform: template
+cover_group:
+  value_template: >-
+    {% if is_state('cover.loungeroom_doors', 'open') %}
+      open
+    {% elif is_state('cover.loungeroom_left_window', 'open') %}
+      open
+    {% elif is_state('cover.loungeroom_right_window', 'open') %}
+      open
+    {% elif is_state('cover.kitchen_east_window', 'open') %}
+      open
+    {% elif is_state('cover.sparebedroom_south_window', 'open') %}
+      open
+    {% elif is_state('cover.sparebedroom_east_window', 'open') %}
+      open
+    {% elif is_state('cover.toilet_window', 'open') %}
+      open
+    {% elif is_state('cover.bedroom_left_window', 'open') %}
+      open
+    {% elif is_state('cover.bedroom_right_window ', 'open') %}
+      open
+    {% else %}
+      closed
+    {% endif %}

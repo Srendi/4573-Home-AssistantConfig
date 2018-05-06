@@ -1,0 +1,14 @@
+cover_group:
+  sequence:
+    - service_template: "cover.{{modus}}_cover"
+      data:
+        entity_id:
+          - cover.loungeroom_doors
+          - cover.loungeroom_left_window
+          - cover.loungeroom_right_window
+          - cover.kitchen_east_window
+          - cover.sparebedroom_south_window
+          - cover.sparebedroom_east_window
+          - cover.toilet_window
+          - cover.bedroom_left_window
+          - cover.bedroom_right_window 
