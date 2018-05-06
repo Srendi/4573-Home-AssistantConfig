@@ -19,4 +19,4 @@ entities:
 #  - cover.computerroom_north_window 
 #  - cover.computerroom_west_window 
 #  - cover.garage_north_window 
-  - cover.garage_rolladoor 
+  - cover.garage_door 
