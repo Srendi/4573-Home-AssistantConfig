@@ -1,0 +1,5 @@
+name: "Lily's Home"
+latitude: !secret lily_home_latitude
+longitude: !secret lily_home_longitude
+radius: 200
+icon: mdi:home-heart

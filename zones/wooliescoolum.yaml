@@ -1,0 +1,5 @@
+name: "Woolies Coolum"
+latitude: !secret coolum_woolies_latitude
+longitude: !secret coolum_woolies_longitude
+radius: 120
+icon: mdi:store

@@ -74,6 +74,8 @@ downloader:
 
 # Discover some devices automatically
 discovery:
+  enable:
+    - homekit
 
 ifttt:
   key: !secret ifttt_key
@@ -156,22 +158,22 @@ notify:
 
 
 ###########INCLUDES#####
-alert: !include_dir_merge_named alerts/
+#alert: !include_dir_merge_named alerts/
 automation: !include_dir_list automations/*.yaml
-cover: !include_dir_list covers/
-input_boolean: !include misc/input_boolean.yaml
-input_select: !include misc/input_select.yaml
+#cover: !include_dir_list covers/
+#input_boolean: !include misc/input_boolean.yaml
+#input_select: !include misc/input_select.yaml
 
 # Input_slider broken
 #input_slider: !include misc/input_slider.yaml
-binary_sensor: !include_dir_list binary_sensors/
-device_sun_light_trigger: !include device_sun_light_trigger.yaml
+#binary_sensor: !include_dir_list binary_sensors/
+#device_sun_light_trigger: !include device_sun_light_trigger.yaml
 device_tracker: !include_dir_list device_trackers/*.yaml
 cloud: !include cloud.yaml
 conversation: !include_dir_list voice/intents/
 sensor: !include_dir_list sensors/
-light: !include_dir_list lights/
-shell_command: !include misc/shell_commands.yaml
+#light: !include_dir_list lights/
+#shell_command: !include misc/shell_commands.yaml
 switch: !include_dir_list switches/
 script: !include_dir_merge_named scripts/
 
@@ -184,6 +186,6 @@ alexa: !include_dir_list voice/alexa/
 group: !include groups.yaml
 weather: !include_dir_list weather/
 weblink: !include misc/weblinks.yaml
-zone: !include_dir_list zones/*.yaml
+zone: !include_dir_list zones/
 camera: !include_dir_list cameras/
 media_player: !include_dir_list media_players/*.yaml
