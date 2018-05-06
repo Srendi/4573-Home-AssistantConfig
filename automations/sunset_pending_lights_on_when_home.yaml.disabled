@@ -1,0 +1,12 @@
+alias: Turn on Lights before sunset when home
+trigger:
+  platform: sun
+  event: sunset
+  offset: "-00:45:00"
+condition:
+  condition: state
+  entity_id: group.Phones
+  state: home
+action:
+  service: homeassistant.turn_on
+  entity_id: group.kitchen_lights

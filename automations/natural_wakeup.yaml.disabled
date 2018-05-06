@@ -1,0 +1,9 @@
+trigger:
+  platform: time
+  at: "07:15:00"
+action:
+  service: light.turn_on
+  entity_id: light.Bedroom
+  data:
+    # 900 seconds = 15 minutes
+    transition: 900

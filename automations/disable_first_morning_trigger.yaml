@@ -1,0 +1,8 @@
+alias: Disable First Morning Trigger
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: "01:00:00"
+action: 
+  service: homeassistant.turn_off
+  entity_id: input_boolean.trigger_first_morning

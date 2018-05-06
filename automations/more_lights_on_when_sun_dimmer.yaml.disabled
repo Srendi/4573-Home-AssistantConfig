@@ -1,0 +1,9 @@
+alias: 'Turn more lights on as the sun gets dimmer'
+trigger:
+  platform: numeric_state
+  entity_id: sun.sun
+  value_template: '{{ state.attributes.elevation }}'
+  below: 1.5
+action:
+  service: scene.turn_on
+  entity_id: scene.more_lights
