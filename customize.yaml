@@ -1,2 +1,51 @@
-# cover_group:
-#   assume_state: true
+binary_sensor.gavin_presence:
+  device_class: presence
+
+binary_sensor.rae_presence:
+  device_class: presence
+
+binary_sensor.claud_presence:
+  device_class: presence
+
+binary_sensor.lily_presence:
+  device_class: presence
+
+binary_sensor.lynne_presence:
+  device_class: presence
+
+binary_sensor.occupancy_status:
+  device_class: presence
+
+group.phones:
+  hidden: true
+
+group.phone_group_lily:
+  hidden: true
+
+group.phone_group_rae:
+  hidden: true
+  
+group.phone_group_gavin:
+  hidden: true
+  
+group.phone_group_claud:
+  hidden: true
+  
+group.phone_group_lynne:
+  hidden: true
+
+device_tracker.sonyxperia:
+  hidden: true
+
+device_tracker.lynnesiphone:
+  hidden: true
+
+device_tracker.raesandroid:
+  hidden: true
+
+device_tracker.raesiphone:
+  hidden: true
+
+device_tracker.lilysandroid:
+  hidden: true
+

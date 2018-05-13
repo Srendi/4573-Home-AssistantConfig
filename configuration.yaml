@@ -9,15 +9,17 @@ homeassistant:
   unit_system: metric
   # C for Celcius, F for Fahrenheit
   temperature_unit: C
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret homeassistant_time_zone
   # Customization file
   customize: !include customize.yaml
+  #customize_glob: !include customize_glob.yaml
+  #customize_domain: !include customize_domain.yaml
 
 # Show links to resources in log and frontend
 introduction:
 
-# Shopping list intent 
+# Shopping list intent
 # https://www.home-assistant.io/components/shopping_list/
 shopping_list:
 
@@ -28,6 +30,8 @@ frontend:
 
 # Enables configuration UI
 config:
+
+api:
 
 http:
   # Secrets are defined in the file secrets.yaml
@@ -40,7 +44,7 @@ http:
   cors_allowed_origins:
     - https://google.com
     - https://www.home-assistant.io
-  use_x_forwarded_for: True
+  use_x_forwarded_for: true
   # Passwordless access
   trusted_networks: !secret home_trusted_networks
   # Prevent too many failed login attempes
@@ -54,7 +58,7 @@ wake_on_lan:
 google:
   client_id: !secret google_calender_CLIENT_ID
   client_secret: !secret google_calender_CLIENT_SECRET
-  track_new_calendar: True
+  track_new_calendar: true
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -107,10 +111,10 @@ tts:
 
 # Embedded MQTT Broker
 mqtt:
-#  embedded:
-#    listeners:
-#      default:
-#        bind: 0.0.0.0:1883
+  # embedded:
+  #  listeners:
+  #    default:
+  #      bind: 0.0.0.0:1883
   discovery: true
   discovery_prefix: homeassistant
   birth_message:
@@ -143,11 +147,12 @@ google_assistant:
 
 # Apple HomeKit and Siri Control
 homekit:
-  auto_start: False
+  auto_start: false
 
 # Google Assistant Speach Thing
 # https://www.home-assistant.io/components/dialogflow/
-# https://github.com/home-assistant/home-assistant.github.io/blob/next/source/assets/HomeAssistant_APIAI.zip (Imported into Dialogueflow website)
+# https://github.com/home-assistant/home-assistant.github.io/blob/next/source/assets/HomeAssistant_APIAI.zip
+# (Imported into Dialogueflow website)
 dialogflow:
 
 notify:
@@ -157,28 +162,28 @@ notify:
     gcm_sender_id: !secret gcm_sender_id
 
 
-###########INCLUDES#####
-#alert: !include_dir_merge_named alerts/
+########### INCLUDES #####
+# alert: !include_dir_merge_named alerts/
 automation: !include_dir_list automations/*.yaml
-#cover: !include_dir_list covers/
+# cover: !include_dir_list covers/
 input_boolean: !include misc/input_boolean.yaml
-#input_select: !include misc/input_select.yaml
+# input_select: !include misc/input_select.yaml
 scene: !include_dir_list scenes/
 # Input_slider broken
-#input_slider: !include misc/input_slider.yaml
-#binary_sensor: !include_dir_list binary_sensors/
-#device_sun_light_trigger: !include device_sun_light_trigger.yaml
-device_tracker: !include_dir_list device_trackers/*.yaml
+# input_slider: !include misc/input_slider.yaml
+binary_sensor: !include_dir_list binary_sensors/
+# device_sun_light_trigger: !include device_sun_light_trigger.yaml
+device_tracker: !include device_trackers/all_trackers.yaml
 cloud: !include cloud.yaml
 conversation: !include_dir_list voice/intents/*.yaml
 sensor: !include_dir_list sensors/
-#light: !include_dir_list lights/
-#shell_command: !include misc/shell_commands.yaml
+# light: !include_dir_list lights/
+# shell_command: !include misc/shell_commands.yaml
 switch: !include_dir_list switches/
 script: !include_dir_merge_named scripts/
 
 # To do: Separate intent_scripts into dir_list
-#intent_script: !include_dir_list voice/intent_scripts/
+# intent_script: !include_dir_list voice/intent_scripts/
 intent_script: !include_dir_merge_named voice/intent_scripts/
 alexa: !include_dir_list voice/alexa/
 
@@ -188,4 +193,4 @@ weather: !include_dir_list weather/
 weblink: !include misc/weblinks.yaml
 zone: !include_dir_list zones/
 camera: !include_dir_list cameras/
-media_player: !include_dir_list media_players/*.yaml
+media_player: !include_dir_list media_players/*.

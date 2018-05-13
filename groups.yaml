@@ -45,6 +45,7 @@ computerroom:
     - device_tracker.mikrotik
     - device_tracker.d7800
     - device_tracker.fog
+    - device_tracker.hass
 
 # hallway:
 #   name: Hallway
@@ -71,11 +72,11 @@ phones:
   name: Phones
   icon: mdi:android
   entities:
-    - device_tracker.sonyxperia
-    - device_tracker.lynnesiphone
-    - device_tracker.raesandroid
-    - device_tracker.raesiphone
-    - device_tracker.lilysandroid
+    # - device_tracker.sonyxperia
+    # - device_tracker.lynnesiphone
+    # - device_tracker.raesandroid
+    # - device_tracker.raesiphone
+    # - device_tracker.lilysandroid
     # Gavin (Android)
     - device_tracker.google_maps_102041801480434384144
     # Mum (iPhone)
@@ -86,6 +87,69 @@ phones:
     - device_tracker.google_maps_111307081946649854814
     # Lily (Android)
     - device_tracker.google_maps_109600692196833190615
+
+phone_group_gavin:
+  view: no
+  # name: 
+  # control: 
+  icon: mdi:android
+  entities:
+    - device_tracker.sonyxperia
+    - device_tracker.google_maps_102041801480434384144
+    - device_tracker.homeassistant_gavinsandroid
+    # - device_tracker.sonyxperia_bt
+
+phone_group_claud:
+  view: no
+  # name: 
+  # control: 
+  icon: mdi:cellphone-iphone
+  entities:
+    - device_tracker.google_maps_117660528972668882643
+    - device_tracker.raesiphone
+    # - device_tracker.homeassistant_raesiphone
+    # - device_tracker.raesiphone_bt
+
+phone_group_rae:
+  view: no
+  # name: 
+  # control: 
+  icon: mdi:android
+  entities:
+    - device_tracker.google_maps_111307081946649854814
+    - device_tracker.raesandroid
+    # - device_tracker.homeassistant_raesandroid
+    # - device_tracker.raesandroid_bt
+
+phone_group_lily:
+  view: no
+  # name: 
+  # control: 
+  icon: mdi:android
+  entities:
+    - device_tracker.google_maps_109600692196833190615
+    - device_tracker.lilysandroid
+    # - device_tracker.homeassistant_lilysandroid
+    # - device_tracker.lilysandroid_bt
+
+phone_group_lynne:
+  view: no
+  # name: 
+  # control: 
+  icon: mdi:cellphone-iphone
+  entities:
+    - device_tracker.google_maps_111254142608163799065
+    - device_tracker.lynnesiphone
+    # - device_tracker.homeassistant_lynnesiphone
+    # - device_tracker.lynnesiphone_bt
+
+all_phones:
+  entities:
+    - group.phone_group_gavin
+    - group.phone_group_lynne
+    - group.phone_group_lily
+    - group.phone_group_claud
+    - group.phone_group_rae
 
 laptops:
   name: Laptops
@@ -129,4 +193,3 @@ laptops:
 #     - device_tracker.ben6p_ben6p
 #     - device_tracker.cailin6p_cailin6p
 #     - device_tracker.watch_moto360
-

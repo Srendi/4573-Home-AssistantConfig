@@ -1,0 +1,6 @@
+name: "Gav's Home"
+latitude: !secret gavhome_latitude
+longitude: !secret gavhome_longitude
+radius: 200
+icon: mdi:account-multiple
+
